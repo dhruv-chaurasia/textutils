@@ -55,13 +55,13 @@ export default function TextForm(props) {
 
             <div className="mb-3" style={{color: props.mode==='light'?'black':'white'}}>
                 <h1>{props.heading}</h1>
-                <textarea className="form-control" value={text} onChange={handleOnChange} style={{backgroundColor: props.mode==='dark'?'grey':'white', color: props.mode==='light'?'black':'white'}} id="exampleFormControlTextarea1" rows="8"></textarea>
-                <button className="btn btn-primary mx-2 my-2" onClick={handleUpClick}>Convert to UpperCase</button>
-                <button className="btn btn-primary mx-2 my-2" onClick={handleDownClick}>Convert to LowerCase</button>
-                <button className="btn btn-primary mx-2 my-2" onClick={handleClearClick}>Clear Text</button>
-                <button className="btn btn-primary mx-2 my-2" onClick={handleCapitalizeClick}>Capitalize</button>
-                <button className="btn btn-primary mx-2 my-2" onClick={handleCopy}>Copy Text</button>
-                <button className="btn btn-primary mx-2 my-2" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
+                <textarea className="form-control" value={text} onChange={handleOnChange} style={{backgroundColor: props.mode==='dark'?'#010989':'white', color: props.mode==='light'?'black':'white'}} id="exampleFormControlTextarea1" rows="8"></textarea>
+                <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleUpClick}>Convert to UpperCase</button>
+                <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleDownClick}>Convert to LowerCase</button>
+                <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleClearClick}>Clear Text</button>
+                <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleCapitalizeClick}>Capitalize</button>
+                <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleCopy}>Copy Text</button>
+                <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
                 {/* <button className="btn btn-primary mx-2 my-2" onClick={handleItalicClick}>Italic</button> */}
             </div>
             <div className={`container text-${props.mode==='light'?'dark':'light'}`}>
